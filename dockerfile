@@ -1,4 +1,5 @@
-FROM bhanu337/virat
-
+FROM ubuntu
 RUN apt-get update
-ADD . /1.html  /var/www/html/
+RUN apt-get -y install apache2
+ADD . /var/www/html
+ENTRYPOINT apachectl -D FOREGROUND
